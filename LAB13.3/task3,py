@@ -1,0 +1,36 @@
+from dataclasses import dataclass
+from typing import Iterable, List
+
+
+@dataclass
+class Student:
+
+    """Represents a student with a name, age, and a collection of marks.
+
+    Attributes:
+        name: The student's full name.
+        age: The student's age in years.
+        marks: A list of numeric marks (e.g., exam scores).
+    """
+
+    name: str
+    age: int
+    marks: List[float]
+
+    def details(self) -> None:
+
+        """Print the student's basic details in a readable format."""
+        print(f"Name: {self.name}, Age: {self.age}")
+
+    def total(self) -> float:
+
+        """Return the sum of all marks."""
+        return float(sum(self.marks))
+
+
+if __name__ == "__main__":
+    student = Student(name="Alice", age=20, marks=[85, 90, 78])
+    student.details()
+    print("Total marks:", student.total())
+
+
