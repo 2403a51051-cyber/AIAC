@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Employee ID Card - Responsive UI</title>
+
+<style>
+    /* ------------ Global Styling ------------ */
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #f4f4f4;
+        font-family: Arial, sans-serif;
+        padding: 10px;
+    }
+
+    /* ------------ ID Card Container ------------ */
+    .id-card {
+        width: 350px;
+        background: #ffffff;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        border-radius: 12px;
+        overflow: hidden;
+        text-align: center;
+        transition: 0.3s ease;
+    }
+
+    /* Hover Effect (Web UI Enhancement) */
+    .id-card:hover {
+        transform: scale(1.03);
+    }
+
+    /* Employee Image */
+    .photo {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        margin-top: 15px;
+        border: 4px solid #0077ff;
+    }
+
+    /* Employee Details Text */
+    .details {
+        padding: 15px;
+    }
+
+    .name {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .employee-id {
+        color: #555;
+        margin-top: 5px;
+        font-size: 16px;
+    }
+
+    .department {
+        margin-top: 8px;
+        font-size: 18px;
+        color: #0077ff;
+    }
+
+    /* Footer Tag */
+    footer {
+        background: #0077ff;
+        color: white;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* ------------ Responsive Design for Mobile ------------ */
+    @media (max-width: 480px) {
+        .id-card {
+            width: 90%;
+        }
+        .name {
+            font-size: 20px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="id-card">
+    <!-- Placeholder employee image -->
+    <img src="https://via.placeholder.com/120" alt="Employee Photo" class="photo">
+
+    <div class="details">
+        <div class="name" id="empName">John Doe</div>
+        <div class="employee-id" id="empID">ID: EMP1024</div>
+        <div class="department" id="empDept">Department: IT</div>
+    </div>
+
+    <footer>Startup Company Pvt Ltd</footer>
+</div>
+
+<script>
+/* 
+   JavaScript: Update ID card dynamically using AI-like input simulation
+   This could later be connected to API or database.
+*/
+function updateEmployee(name, id, department) {
+    document.getElementById("empName").textContent = name;
+    document.getElementById("empID").textContent = "ID: " + id;
+    document.getElementById("empDept").textContent = "Department: " + department;
+}
+
+/* Example usage for dynamic updating */
+updateEmployee("Ayesha Khan", "EMP2005", "Management");
+</script>
+
+</body>
+</html>
+
+<!--
+========================================
+Simple UI Test Scenarios (Manual Testing)
+========================================
+
+1. Responsiveness Test:
+   - Open in mobile view (Ctrl + Shift + M in browser dev tools)
+   - Check if card width adjusts & text scales properly
+
+2. Hover effect test:
+   - Move mouse over ID card on desktop
+   - Card should slightly zoom (scale animation)
+
+3. JavaScript Dynamic Update Test:
+   - Modify function call updateEmployee("Name", "ID", "Dept")
+   - Verify updated details appear instantly
+
+4. Image Load Test:
+   - Replace placeholder image URL
+   - Ensure image shows inside circular frame
+
+5. Accessibility Test:
+   - Check text visibility & contrast on light background
+-->
